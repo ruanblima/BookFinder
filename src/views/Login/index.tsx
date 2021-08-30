@@ -1,10 +1,15 @@
 import React from 'react';
-import {View} from 'react-native';
 
-// import { Container } from './styles';
+import * as S from './styles';
 
-const Login: React.FC = () => {
-  return <View />;
+interface LoginProps {}
+
+const Login: React.FC<LoginProps> = () => {
+  return (
+    <S.Container>
+      <S.TitleText>Tela de Login</S.TitleText>
+    </S.Container>
+  );
 };
 
 export default Login;
