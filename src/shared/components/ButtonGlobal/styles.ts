@@ -72,11 +72,11 @@ export const Button = styled(Pressable).attrs<ButtonProps>(
       : theme.Colors[buttonTypes[status].color]};
   border-color: ${({ theme, status, disabled }) =>
     disabled ? theme.Colors.GRANITE : theme.Colors[buttonTypes[status].color]};
-  padding: ${vs(8)}px ${s(8)}px;
+  padding: ${vs(10)}px ${s(20)}px;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border-radius: 2px;
+  border-radius: 6px;
   border-width: 1px;
 `;
 
