@@ -5,7 +5,7 @@ export default {
   Sizes: {
     FONTSIZE_BUTTON: sfs(8),
     FONTSIZE_BUTTON_SEND: sfs(12),
-    FONTSIZE_BUTTON_TITLE: sfs(11),
+    FONTSIZE_BUTTON_TITLE: sfs(20),
     ICON_SIZE_BUTTON: sfs(15),
     FONTSIZE_TITLE: sfs(22),
     FONTSIZE_LABEL: sfs(12),
