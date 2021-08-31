@@ -3,11 +3,11 @@ import { ThemeProvider } from 'styled-components/native';
 
 import themes from '~/shared/themes';
 
-import Login from './views/Login';
+import Routes from '~/routes';
 
 const App: React.FC = () => (
   <ThemeProvider theme={themes.light}>
-    <Login />
+    <Routes />
   </ThemeProvider>
 );
 
