@@ -1,26 +1,6 @@
 import { Dimensions } from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
 
-const cache = {};
-
-function getFontSizeStyle(fontSize: any) {
-  if (cache[fontSize]) return cache[fontSize];
-
-  const style = { fontSize };
-  cache[fontSize] = style;
-
-  return style;
-}
-
-export function createStyle(fontSize: number, style?: any) {
-  const fontSizeStyle = getFontSizeStyle(fontSize);
-
-  if (style) {
-    return [style, fontSizeStyle];
-  }
-  return fontSizeStyle;
-}
-
 const vh = Dimensions.get('window').height / 100;
 const vw = Dimensions.get('window').width / 100;
 const vmin = Math.min(vh, vw);

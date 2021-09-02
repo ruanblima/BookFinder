@@ -33,7 +33,6 @@ const buttonTypes: ButtonTypesProps = {
   },
 };
 interface ButtonTextProps {
-  title: string;
   buttonType?: string;
   status: 'primary' | 'error' | 'success' | 'warning';
 }
@@ -76,12 +75,9 @@ export const Button = styled(Pressable).attrs<ButtonProps>(
   border-width: 1px;
 `;
 
-export const ButtonText = styled(Text).attrs<ButtonTextProps>(
-  ({ theme, title }) => ({
-    fontSize: theme.Sizes.FONTSIZE_BUTTON_TITLE,
-    text: title,
-  }),
-)<ButtonTextProps>`
+export const ButtonText = styled(Text).attrs<ButtonTextProps>(({ theme }) => ({
+  fontSize: theme.Sizes.FONTSIZE_BUTTON_TITLE,
+}))<ButtonTextProps>`
   color: ${({ theme, buttonType, status }) =>
     buttonType === 'outline'
       ? theme.Colors[buttonTypes[status].color]

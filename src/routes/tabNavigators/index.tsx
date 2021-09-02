@@ -11,8 +11,16 @@ const Tab = createBottomTabNavigator();
 
 const Tabs: React.FC = () => (
   <Tab.Navigator tabBar={(props) => <BottomTab {...props} />}>
-    <Tab.Screen name={HOME_TAB} component={Navigators.Home} />
-    <Tab.Screen name={PROFILE_TAB} component={Navigators.Profile} />
+    <Tab.Screen
+      name={HOME_TAB}
+      options={{ headerShown: false }}
+      component={Navigators.Home}
+    />
+    <Tab.Screen
+      name={PROFILE_TAB}
+      options={{ headerShown: false }}
+      component={Navigators.Profile}
+    />
   </Tab.Navigator>
 );
 

@@ -27,7 +27,9 @@ const ButtonGlobal: React.FC<ButtonGlobalProps> = ({
     {iconLeft && (
       <S.IconButton buttonType={buttonType} status={status} name={iconLeft} />
     )}
-    <S.ButtonText buttonType={buttonType} status={status} title={title} />
+    <S.ButtonText buttonType={buttonType} status={status}>
+      {title}
+    </S.ButtonText>
   </S.Button>
 );
 

@@ -1,29 +1,25 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import { createStyle } from '~/shared/utils/fontStyle';
+import { ApplicationState } from '~/shared/store';
+
+import * as S from './styles';
 
 interface NewTextProps {
   fontSize?: number;
-  style?: any;
-  capitalize?: boolean;
-  text?: string;
 }
 
 const NewText: React.FC<NewTextProps> = ({
   fontSize = 16,
-  style,
-  capitalize,
-  text,
   children,
   ...rest
 }) => {
-  const customStyle = createStyle(fontSize, style);
+  const { delta } = useSelector((state: ApplicationState) => state.font);
 
   return (
-    <Text {...rest} style={customStyle} allowFontScaling={false}>
-      {(text && capitalize && text.toUpperCase()) || (text && text) || children}
-    </Text>
+    <S.Text {...rest} customFontSize={fontSize + delta}>
+      {children}
+    </S.Text>
   );
 };
 

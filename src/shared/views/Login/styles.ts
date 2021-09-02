@@ -1,4 +1,6 @@
 import styled from 'styled-components/native';
+
+import Text from '~/shared/components/Text';
 import { vs } from '~/shared/utils/responsibleText';
 
 export const Container = styled.View`
@@ -13,9 +15,10 @@ export const ContainerTitle = styled.View`
   justify-content: center;
 `;
 
-export const TextTitle = styled.Text`
+export const TextTitle = styled(Text).attrs({
+  fontSize: 40,
+})`
   color: black;
-  font-size: 40px;
 `;
 
 export const Form = styled.View`

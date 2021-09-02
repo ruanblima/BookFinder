@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { TextInputProps } from 'react-native';
 
+import { useSelector } from 'react-redux';
 import { sfs } from '~/shared/utils/responsibleText';
 
 import * as S from './styles';
+import { ApplicationState } from '~/shared/store';
 
 interface InputProps {
   label?: string;
@@ -25,6 +27,7 @@ const Input: React.FC<TextInputProps & InputProps> = ({
   ...rest
 }) => {
   const { Sizes } = useContext(ThemeContext);
+  const { delta } = useSelector((state: ApplicationState) => state.font);
   const fontSize = Sizes.FONTSIZE_INPUT;
 
   return (
@@ -36,7 +39,7 @@ const Input: React.FC<TextInputProps & InputProps> = ({
           <S.ContainerInput error={error} labelSameLine={labelSameLine}>
             <S.Input
               {...rest}
-              customFontSize={fontSize}
+              customFontSize={fontSize + delta}
               iconRight={iconRight}
             />
             {iconRight && (
