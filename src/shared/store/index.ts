@@ -8,9 +8,11 @@ import { reactotron } from '~/core/config/ReactotronConfig';
 import reducers from './ducks';
 
 import { FontState } from './ducks/font/types';
+import { ThemeState } from './ducks/theme/types';
 
 export interface ApplicationState {
   font: FontState;
+  theme: ThemeState;
 }
 
 export const persistConfig = {

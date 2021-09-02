@@ -6,6 +6,7 @@ import {
   decrementFontSize,
   recoveryFontSize,
 } from '~/shared/store/ducks/font/actions';
+import { toogleTheme } from '~/shared/store/ducks/theme/actions';
 
 import * as S from './styles';
 
@@ -14,7 +15,7 @@ const Header: React.FC = () => {
 
   return (
     <S.Container>
-      <S.Button onPress={() => {}}>
+      <S.Button onPress={() => dispatch(toogleTheme())}>
         <S.IconColor />
       </S.Button>
       <S.ContainerFont>
