@@ -4,6 +4,10 @@ import { s, vs } from 'react-native-size-matters';
 import Icon from '~/shared/components/Icon';
 import Text from '~/shared/components/Text';
 
+interface TitleScreenProps {
+  color: string;
+}
+
 export const Container = styled.View`
   flex-direction: row;
   padding-top: ${vs(8)}px;
@@ -16,12 +20,12 @@ export const ContainerTab = styled.View`
 `;
 
 export const IconTab = styled(Icon)`
-  font-size: ${s(30)}px;
+  font-size: ${s(25)}px;
   padding-bottom: 10px;
 `;
 
-export const TitleScreen = styled(Text)`
-  font-size: ${s(17)}px;
+export const TitleScreen = styled(Text)<TitleScreenProps>`
+  font-size: ${s(15)}px;
   color: ${(props) => props.color};
 `;
 

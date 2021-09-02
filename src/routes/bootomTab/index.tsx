@@ -1,6 +1,8 @@
 /* eslint-disable no-nested-ternary */
+
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+
 import { HOME_TAB } from '~/shared/constants/routesNames';
 
 import {
@@ -11,15 +13,26 @@ import {
   ContainerTab,
 } from './styles';
 
-const BottomTab = ({ state, descriptors, navigation }) => {
+interface BottomTabProps {
+  state: any;
+  descriptors: any;
+  navigation: any;
+}
+
+const BottomTab: React.FC<BottomTabProps> = ({
+  state,
+  descriptors,
+  navigation,
+}) => {
   const focusedOptions = descriptors[state.routes[state.index].key].options;
+
   const { Colors } = useContext(ThemeContext);
 
   if (focusedOptions.tabBarVisible === false) {
     return null;
   }
 
-  const renderTab = (route, index) => {
+  const renderTab = (route: any, index: any) => {
     const { options } = descriptors[route.key];
     const label =
       options.tabBarLabel !== undefined
@@ -82,7 +95,7 @@ const BottomTab = ({ state, descriptors, navigation }) => {
 
   return (
     <Container>
-      {state.routes.map((route, index) => (
+      {state.routes.map((route: any, index: any) => (
         <ContainerTab key={index}>{renderTab(route, index)}</ContainerTab>
       ))}
     </Container>
