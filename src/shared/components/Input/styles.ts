@@ -1,4 +1,4 @@
-import { vs, s } from 'react-native-size-matters';
+import { vs } from 'react-native-size-matters';
 import styled from 'styled-components/native';
 
 import Icon from '~/shared/components/Icon';
@@ -24,8 +24,12 @@ interface TextInputProps {
   iconRight?: string;
 }
 
-export const InputWrapper = styled.View`
-  flex: 1;
+export const InputWrapper = styled.View``;
+
+export const ContainerInputIcon = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Touchable = styled.TouchableOpacity``;
@@ -38,7 +42,6 @@ export const Label = styled(Text).attrs(({ theme }) => ({
 
 export const ContainerInput = styled.View<ContainerInputProps>`
   flex-direction: row;
-  min-height: ${vs(30)}px;
   border-color: ${({ theme, error }) =>
     error ? theme.Colors.ERROR : theme.Colors.MEDIUM_GRAY};
   background-color: ${({ theme }) => theme.Colors.WHITE};
@@ -46,14 +49,13 @@ export const ContainerInput = styled.View<ContainerInputProps>`
   margin-left: ${({ labelSameLine }) => (labelSameLine ? 15 : 0)}px;
   width: ${({ labelSameLine }) => (labelSameLine ? '65%' : '100%')};
   border-radius: 2px;
-  border-width: 1px;
-  padding: ${vs(1)}px ${s(4)}px;
+  border-bottom-width: 1px;
   justify-content: space-between;
   align-items: center;
 `;
 
 export const Container = styled.View<ContainerProps>`
-  width: 100%;
+  width: 90%;
   flex-direction: ${({ labelSameLine }) => (labelSameLine ? 'row' : 'column')};
   align-items: ${({ labelSameLine }) =>
     labelSameLine ? 'center' : 'flex-start'};
@@ -65,8 +67,9 @@ export const Input = styled.TextInput.attrs<TextInputProps>(
     fontSize: customFontSize,
   }),
 )<TextInputProps>`
-  height: ${vs(25)}px;
   width: ${({ iconRight }) => (iconRight ? 90 : 100)}%;
+  margin-bottom: ${vs(10)}px;
+  margin-left: 10px;
 `;
 export const ErrorMessage = styled(Text)`
   color: ${({ theme }) => theme.Colors.ERROR};
@@ -76,9 +79,10 @@ export const ErrorMessage = styled(Text)`
 export const IconInput = styled(Icon).attrs<IconInputProps>(
   ({ theme, name, iconType }) => ({
     name,
-    size: theme.Sizes.FONTSIZE_INPUT,
+    size: theme.Sizes.ICON_SIZE,
     type: iconType,
   }),
 )<IconInputProps>`
-  color: ${({ iconColor, theme }) => iconColor || theme.Colors.DELL_BLUE};
+  color: ${({ iconColor, theme }) =>
+    iconColor || theme.Colors.COLOR_APLICATION};
 `;

@@ -15,7 +15,7 @@ export const ContainerTab = styled.View`
   flex: 1;
 `;
 
-export const IconTab = styled((props) => Icon(props, props.typeIcon)).attrs({})`
+export const IconTab = styled(Icon)`
   font-size: ${s(30)}px;
   padding-bottom: 10px;
 `;

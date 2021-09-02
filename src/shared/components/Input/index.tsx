@@ -7,8 +7,9 @@ import { sfs } from '~/shared/utils/responsibleText';
 import * as S from './styles';
 
 interface InputProps {
-  label: string;
+  label?: string;
   iconRight?: string;
+  iconLeft?: string;
   error?: any;
   labelSameLine?: boolean;
   actionIcon?: () => void;
@@ -17,6 +18,7 @@ interface InputProps {
 const Input: React.FC<TextInputProps & InputProps> = ({
   label,
   iconRight,
+  iconLeft,
   labelSameLine,
   error,
   actionIcon,
@@ -27,18 +29,25 @@ const Input: React.FC<TextInputProps & InputProps> = ({
 
   return (
     <S.InputWrapper>
-      <S.Container labelSameLine={labelSameLine}>
-        <S.Label fontSize={sfs(9)}>{label}</S.Label>
-        <S.ContainerInput error={error} labelSameLine={labelSameLine}>
-          <S.Input {...rest} customFontSize={fontSize} iconRight={iconRight} />
-          {iconRight && (
-            <S.Touchable onPress={() => actionIcon && actionIcon()}>
-              <S.IconInput name={iconRight} />
-            </S.Touchable>
-          )}
-        </S.ContainerInput>
-      </S.Container>
-      <S.ErrorMessage fontSize={sfs(7)}>{error}</S.ErrorMessage>
+      <S.ContainerInputIcon>
+        {iconLeft && <S.IconInput name={iconLeft} />}
+        <S.Container labelSameLine={labelSameLine}>
+          {label && <S.Label fontSize={sfs(9)}>{label}</S.Label>}
+          <S.ContainerInput error={error} labelSameLine={labelSameLine}>
+            <S.Input
+              {...rest}
+              customFontSize={fontSize}
+              iconRight={iconRight}
+            />
+            {iconRight && (
+              <S.Touchable onPress={() => actionIcon && actionIcon()}>
+                <S.IconInput name={iconRight} />
+              </S.Touchable>
+            )}
+          </S.ContainerInput>
+        </S.Container>
+      </S.ContainerInputIcon>
+      {error && <S.ErrorMessage fontSize={sfs(7)}>{error}</S.ErrorMessage>}
     </S.InputWrapper>
   );
 };

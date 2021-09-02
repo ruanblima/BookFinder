@@ -65,9 +65,11 @@ const BottomTab = ({ state, descriptors, navigation }) => {
               ? isFocused
                 ? 'home'
                 : 'home-outline'
+              : isFocused
+              ? 'person'
               : 'person-outline'
           }
-          typeIcon="ION"
+          type="ionicons"
           color={isFocused ? Colors.BLACK : Colors.GRAY}
         />
 

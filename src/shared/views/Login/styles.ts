@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { vs } from '~/shared/utils/responsibleText';
 
 export const Container = styled.View`
   flex: 1;
@@ -17,18 +18,6 @@ export const TextTitle = styled.Text`
   font-size: 40px;
 `;
 
-export const ContainerInput = styled.View`
-  background-color: ${({ theme }) => theme.Colors.GRANITE};
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 15px;
-`;
-
-export const TextInput = styled.TextInput`
-  padding: 10px;
-  font-size: 20px;
-`;
-
 export const Form = styled.View`
   flex: 0.5;
   width: 100%;
@@ -38,4 +27,8 @@ export const Form = styled.View`
 
 export const ContainerButton = styled.View`
   flex: 0.2;
+`;
+
+export const ContainerInput = styled.View`
+  margin-bottom: ${vs(10)}px;
 `;

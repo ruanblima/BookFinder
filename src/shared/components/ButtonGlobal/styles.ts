@@ -8,11 +8,7 @@ import Text from '~/shared/components/Text';
 import Icon from '~/shared/components/Icon';
 
 interface StatusProps {
-  color:
-    | 'FEEDBACK_CORRECT'
-    | 'FEEDBACK_ERROR'
-    | 'FEEDBACK_WARNING'
-    | 'DELL_BLUE';
+  color: 'FEEDBACK_CORRECT' | 'ERROR' | 'FEEDBACK_WARNING' | 'COLOR_APLICATION';
 }
 
 interface ButtonTypesProps {
@@ -27,13 +23,13 @@ const buttonTypes: ButtonTypesProps = {
     color: 'FEEDBACK_CORRECT',
   },
   error: {
-    color: 'FEEDBACK_ERROR',
+    color: 'ERROR',
   },
   warning: {
     color: 'FEEDBACK_WARNING',
   },
   primary: {
-    color: 'DELL_BLUE',
+    color: 'COLOR_APLICATION',
   },
 };
 interface ButtonTextProps {
@@ -57,7 +53,7 @@ export const Button = styled(Pressable).attrs<ButtonProps>(
     android_ripple: {
       color:
         buttonType === 'outline'
-          ? theme.Colors.BLUE_ACCENT
+          ? theme.Colors.COLOR_APLICATION
           : theme.Colors.LIGHT_GRAY,
       borderless: false,
       radius: 18,

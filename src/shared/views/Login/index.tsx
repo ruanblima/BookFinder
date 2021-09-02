@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/core';
 
 import ButtonGlobal from '~/shared/components/ButtonGlobal';
+import Input from '~/shared/components/Input';
 
 import { TABS_SCREEN } from '~/shared/constants/routesNames';
 
@@ -12,6 +13,7 @@ const Login: React.FC = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const login = () => {
     navigation.navigate(TABS_SCREEN);
@@ -25,17 +27,23 @@ const Login: React.FC = () => {
 
       <S.Form>
         <S.ContainerInput>
-          <S.TextInput
+          <Input
+            iconLeft="email"
             placeholder="Digite seu email"
             value={email}
             onChangeText={setEmail}
           />
         </S.ContainerInput>
+
         <S.ContainerInput>
-          <S.TextInput
+          <Input
+            iconLeft="lock"
             placeholder="Digite sua senha"
             value={password}
             onChangeText={setPassword}
+            secureTextEntry={!showPassword}
+            actionIcon={() => setShowPassword(!showPassword)}
+            iconRight={showPassword ? 'eye-off' : 'eye'}
           />
         </S.ContainerInput>
       </S.Form>
