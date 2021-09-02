@@ -3,18 +3,18 @@ import { useNavigation } from '@react-navigation/core';
 
 import ButtonGlobal from '~/shared/components/ButtonGlobal';
 
-import { HOME_TAB } from '~/shared/constants/routesNames';
+import { TABS_SCREEN } from '~/shared/constants/routesNames';
 
 import * as S from './styles';
 
 const Login: React.FC = () => {
   const navigation = useNavigation();
 
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const login = () => {
-    navigation.navigate(HOME_TAB);
+    navigation.navigate(TABS_SCREEN);
   };
 
   return (

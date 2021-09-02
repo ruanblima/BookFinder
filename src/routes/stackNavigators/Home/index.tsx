@@ -3,14 +3,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from '~/shared/views/Home';
 
-import { HOME } from '~/shared/constants/routesNames';
+import { HOME_SCREEN } from '~/shared/constants/routesNames';
 
 const Stack = createStackNavigator();
 
-const HomeStack = () => (
+const HomeStack: React.FC = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name={HOME}
+      name={HOME_SCREEN}
       component={Home}
       options={{ headerShown: false }}
     />

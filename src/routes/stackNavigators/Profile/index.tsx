@@ -7,7 +7,7 @@ import { PROFILE } from '~/shared/constants/routesNames';
 
 const Stack = createStackNavigator();
 
-const ProfileStack = () => (
+const ProfileStack: React.FC = () => (
   <Stack.Navigator>
     <Stack.Screen
       name={PROFILE}

@@ -1,6 +1,7 @@
+/* eslint-disable no-nested-ternary */
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { HOME } from '~/shared/constants/routesNames';
+import { HOME_TAB } from '~/shared/constants/routesNames';
 
 import {
   IconTab,
@@ -48,7 +49,7 @@ const BottomTab = ({ state, descriptors, navigation }) => {
       });
     };
 
-    const nameScreen = label === HOME ? 'Home' : 'Perfil';
+    const nameScreen = label === HOME_TAB ? 'Home' : 'Perfil';
 
     return (
       <Touchable
@@ -58,13 +59,17 @@ const BottomTab = ({ state, descriptors, navigation }) => {
         testID={options.tabBarTestID}
         onPress={onPress}
         onLongPress={onLongPress}>
-        {/* <IconTab
+        <IconTab
           name={
-            label === HOME ? (isFocused ? 'home' : 'home-outline') : 'profile'
+            label === HOME_TAB
+              ? isFocused
+                ? 'home'
+                : 'home-outline'
+              : 'person-outline'
           }
           typeIcon="ION"
           color={isFocused ? Colors.BLACK : Colors.GRAY}
-        /> */}
+        />
 
         <TitleScreen color={isFocused ? Colors.BLACK : Colors.GRAY}>
           {nameScreen}
