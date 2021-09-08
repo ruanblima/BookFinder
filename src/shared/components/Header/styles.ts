@@ -23,7 +23,7 @@ export const RestoreFont = styled(Text).attrs({
   fontSize: sfs(25),
 })`
   font-weight: bold;
-  color: ${({ theme }) => theme.Colors.WHITE};
+  color: ${({ theme }) => theme.Colors.TEXT_CLICKABLE};
   margin-right: 20px;
   margin-left: 18px;
 `;
@@ -32,7 +32,7 @@ export const DecreaseIncreaseFont = styled(Text).attrs({
   fontSize: sfs(25),
 })`
   font-weight: bold;
-  color: ${({ theme }) => theme.Colors.WHITE};
+  color: ${({ theme }) => theme.Colors.TEXT_CLICKABLE};
 `;
 
 export const Button = styled.TouchableOpacity``;
@@ -41,5 +41,5 @@ export const IconColor = styled(Icon).attrs(({ theme }) => ({
   name: 'invert-colors',
   size: theme.Sizes.ICON_SIZE,
 }))`
-  color: ${({ theme }) => theme.Colors.WHITE};
+  color: ${({ theme }) => theme.Colors.TEXT_CLICKABLE};
 `;

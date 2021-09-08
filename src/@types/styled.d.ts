@@ -11,7 +11,6 @@ type ColorsProps = {
   ERROR: string;
   FEEDBACK_CORRECT: string;
   FEEDBACK_WARNING: string;
-  BACKGROUND_WHITE: string;
   GRAY_LIGHT: string;
   SECONDARY_LIGHT_GRAY: string;
   CARD_TEXT: string;
@@ -19,6 +18,11 @@ type ColorsProps = {
   SECONDARY_MEDIUM_GRAY: string;
   FONT_INPUT: string;
   COLOR_APLICATION: string;
+  BUTTON_COLOR: string;
+  BACKGROUND: string;
+  GRAY_SCREEN: string;
+  TEXT_CLICKABLE: string;
+  BUTTON_ERROR: string;
 };
 
 type SizingProps = {
