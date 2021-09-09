@@ -50,7 +50,7 @@ const Input: React.FC<TextInputProps & InputProps> = ({
           </S.ContainerInput>
         </S.Container>
       </S.ContainerInputIcon>
-      {error && <S.ErrorMessage fontSize={sfs(7)}>{error}</S.ErrorMessage>}
+      {error && <S.ErrorMessage fontSize={sfs(12)}>{error}</S.ErrorMessage>}
     </S.InputWrapper>
   );
 };

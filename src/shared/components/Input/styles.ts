@@ -74,6 +74,7 @@ export const Input = styled.TextInput.attrs<TextInputProps>(
 export const ErrorMessage = styled(Text)`
   color: ${({ theme }) => theme.Colors.ERROR};
   margin-top: 15px;
+  margin-left: 30px;
 `;
 
 export const IconInput = styled(Icon).attrs<IconInputProps>(

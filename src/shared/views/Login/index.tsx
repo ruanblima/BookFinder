@@ -1,23 +1,40 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/core';
+import { useFormik } from 'formik';
 
 import ButtonGlobal from '~/shared/components/ButtonGlobal';
 import Input from '~/shared/components/Input';
 
 import { TABS_SCREEN } from '~/shared/constants/routesNames';
 
+import validationSchema from './validations';
+
 import * as S from './styles';
+
+interface DataFormProps {
+  email: string;
+  password: string;
+}
 
 const Login: React.FC = () => {
   const navigation = useNavigation();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const login = () => {
+  const login = (data: DataFormProps) => {
+    console.log(data);
     navigation.navigate(TABS_SCREEN);
   };
+
+  const { handleSubmit, dirty, handleChange, values, errors } = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema,
+    onSubmit: login,
+    validateOnChange: false,
+  });
 
   return (
     <S.Container>
@@ -30,8 +47,9 @@ const Login: React.FC = () => {
           <Input
             iconLeft="email"
             placeholder="Digite seu email"
-            value={email}
-            onChangeText={setEmail}
+            value={values.email}
+            onChangeText={handleChange('email')}
+            error={errors.email}
           />
         </S.ContainerInput>
 
@@ -39,17 +57,18 @@ const Login: React.FC = () => {
           <Input
             iconLeft="lock"
             placeholder="Digite sua senha"
-            value={password}
-            onChangeText={setPassword}
+            value={values.password}
+            onChangeText={handleChange('password')}
             secureTextEntry={!showPassword}
             actionIcon={() => setShowPassword(!showPassword)}
             iconRight={showPassword ? 'eye-off' : 'eye'}
+            error={errors.password}
           />
         </S.ContainerInput>
       </S.Form>
 
       <S.ContainerButton>
-        <ButtonGlobal action={login} title="ENTRAR" />
+        <ButtonGlobal disabled={!dirty} action={handleSubmit} title="ENTRAR" />
       </S.ContainerButton>
     </S.Container>
   );
