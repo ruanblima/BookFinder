@@ -26,7 +26,6 @@ const ModalOptionsCamera: React.FC<ModalOptionsCameraProps> = ({
         { mediaType: 'photo' },
         (response: ImagePicker.ImagePickerResponse) => {
           if (!response.didCancel) {
-            console.tron.log('res', response);
             const newImage = response?.assets[0];
             const image = {
               name: Platform.OS === 'ios' ? 'foto.jpg' : newImage.fileName,
