@@ -5,6 +5,7 @@ import { BooksTypes, BooksState } from './types';
 const INITIAL_STATE: BooksState = {
   listBooks: [],
   loading: false,
+  errorGetBooks: false,
 };
 
 const reducer: Reducer<BooksState> = (
@@ -20,11 +21,13 @@ const reducer: Reducer<BooksState> = (
       return {
         loading: false,
         listBooks: payload.listBooks,
+        errorGetBooks: false,
       };
     case BooksTypes.GET_BOOKS_ERROR:
       return {
         loading: false,
         listBooks: [],
+        errorGetBooks: true,
       };
     default:
       return state;

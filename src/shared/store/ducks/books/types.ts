@@ -9,6 +9,7 @@ export enum BooksTypes {
 export interface BooksState {
   listBooks: any;
   loading: boolean;
+  errorGetBooks: boolean;
 }
 
 export interface GetBooksProps extends Action {
