@@ -23,3 +23,5 @@ export const ContainerButton = styled.View`
 export const ContainerInput = styled.View`
   margin-bottom: ${vs(10)}px;
 `;
+
+export const Indicator = styled.ActivityIndicator``;

@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import ButtonGlobal from '~/shared/components/ButtonGlobal';
 import Input from '~/shared/components/Input';
+import { ApplicationState } from '~/shared/store';
 
 import { getBooksAction } from '~/shared/store/ducks/books/actions';
 
 import * as S from './styles';
 
 const Home: React.FC = () => {
+  const { loading } = useSelector((state: ApplicationState) => state.books);
   const [textSearch, setTextSearch] = useState<string>('');
 
   const dispatch = useDispatch();
@@ -24,10 +26,13 @@ const Home: React.FC = () => {
           <Input value={textSearch} onChangeText={setTextSearch} />
         </S.ContainerInput>
       </S.Form>
-
-      <S.ContainerButton>
-        <ButtonGlobal action={getBooks} title="BUSCAR" />
-      </S.ContainerButton>
+      {loading ? (
+        <S.Indicator />
+      ) : (
+        <S.ContainerButton>
+          <ButtonGlobal action={getBooks} title="BUSCAR" />
+        </S.ContainerButton>
+      )}
     </S.Container>
   );
 };
