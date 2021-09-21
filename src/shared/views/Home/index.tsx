@@ -18,12 +18,11 @@ const Home: React.FC = () => {
   );
   const [textSearch, setTextSearch] = useState<string>('');
 
-  console.tron.log('listBooks', listBooks);
   const getBooks = (index: number) => {
     dispatch(getBooksAction(textSearch, index));
   };
 
-  const renderBook = ({ item }) => {
+  const renderBook = ({ item }: any) => {
     if (item.volumeInfo.imageLinks === undefined) {
       return null;
     }
@@ -43,33 +42,29 @@ const Home: React.FC = () => {
 
   return (
     <S.Container>
-      <S.Form>
-        <S.ContainerInput>
-          <Input value={textSearch} onChangeText={setTextSearch} />
-        </S.ContainerInput>
-      </S.Form>
-      {loading ? (
-        <S.Indicator />
-      ) : (
-        <S.ContainerHome>
+      <S.ContainerHome>
+        <S.Form>
+          <S.ContainerInput>
+            <Input value={textSearch} onChangeText={setTextSearch} />
+          </S.ContainerInput>
           <S.ContainerButton>
             <ButtonGlobal action={() => getBooks(0)} title="BUSCAR" />
           </S.ContainerButton>
+        </S.Form>
 
-          <S.List
-            data={listBooks}
-            extraData={listBooks}
-            renderItem={renderBook}
-            keyExtractor={(item: any) => item.id.toString()}
-            showsVerticalScrollIndicator={false}
-            ListFooterComponent={<View style={{ height: 100 }} />}
-            refreshing={loading}
-            onRefresh={() => getBooks(listBooks.length)}
-            onEndReached={() => getBooks(listBooks.length)}
-            onEndReachedThreshold={0.2}
-          />
-        </S.ContainerHome>
-      )}
+        <S.List
+          data={listBooks}
+          extraData={[listBooks, textSearch]}
+          renderItem={renderBook}
+          keyExtractor={(item: any) => item.id.toString()}
+          showsVerticalScrollIndicator={false}
+          ListFooterComponent={<View style={{ height: 100 }} />}
+          refreshing={loading}
+          onRefresh={() => getBooks(listBooks.length)}
+          onEndReached={() => getBooks(listBooks.length)}
+          onEndReachedThreshold={0.1}
+        />
+      </S.ContainerHome>
     </S.Container>
   );
 };

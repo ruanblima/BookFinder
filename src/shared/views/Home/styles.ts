@@ -14,10 +14,12 @@ export const Form = styled.View`
   width: 100%;
   padding: 10px 30px;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
 `;
 
 export const ContainerHome = styled.View`
-  flex: 0.8;
+  flex: 1;
 `;
 
 export const ContainerButton = styled.View`
@@ -32,11 +34,11 @@ export const Indicator = styled.ActivityIndicator``;
 
 export const List = styled.FlatList`
   width: 100%;
-  flex: 0.6;
+  flex: 0.9;
 `;
 
 export const BookView = styled.View`
-  padding: 20px 10px 20px 10px
+  padding: 20px 10px 20px 10px;
   width: 100%;
 `;
 
