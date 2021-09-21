@@ -14,7 +14,7 @@ export interface BooksState {
 
 export interface GetBooksProps extends Action {
   type: BooksTypes.GET_BOOKS;
-  payload: { text: string };
+  payload: { text: string; index: number };
 }
 
 export interface GetBooksSuccessProps extends Action {

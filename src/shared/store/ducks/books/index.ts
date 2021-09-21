@@ -15,16 +15,19 @@ const reducer: Reducer<BooksState> = (
   switch (type) {
     case BooksTypes.GET_BOOKS:
       return {
+        ...state,
         loading: true,
       };
     case BooksTypes.GET_BOOKS_SUCCESS:
       return {
+        ...state,
         loading: false,
         listBooks: payload.listBooks,
         errorGetBooks: false,
       };
     case BooksTypes.GET_BOOKS_ERROR:
       return {
+        ...state,
         loading: false,
         listBooks: [],
         errorGetBooks: true,
