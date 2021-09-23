@@ -53,3 +53,8 @@ export const Image = styled.Image`
   height: ${s(130)}px;
   border-radius: ${s(65)}px;
 `;
+
+export const ContainerButton = styled.View`
+  margin-bottom: ${vs(10)}px;
+  padding: 0px ${vs(40)}px;
+`;

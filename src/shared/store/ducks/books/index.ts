@@ -1,5 +1,6 @@
 import { Reducer } from 'redux';
 
+import { UserTypes } from '../user/types';
 import { BooksTypes, BooksState } from './types';
 
 const INITIAL_STATE: BooksState = {
@@ -32,6 +33,8 @@ const reducer: Reducer<BooksState> = (
         listBooks: [],
         errorGetBooks: true,
       };
+    case UserTypes.LOGOUT_USER:
+      return INITIAL_STATE;
     default:
       return state;
   }
