@@ -23,6 +23,8 @@ type ColorsProps = {
   GRAY_SCREEN: string;
   TEXT_CLICKABLE: string;
   BUTTON_ERROR: string;
+  CARD_COLOR: string;
+  CARD_BORDER_COLOR: string;
 };
 
 type SizingProps = {

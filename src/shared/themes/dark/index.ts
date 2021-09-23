@@ -36,5 +36,7 @@ export default {
     GRAY_SCREEN: 'rgba(96,96,96,0.8)',
     TEXT_CLICKABLE: '#FFFF00',
     BUTTON_ERROR: '#FFFF00',
+    CARD_COLOR: '#000',
+    CARD_BORDER_COLOR: '#FFFF00',
   },
 };
