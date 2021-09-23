@@ -14,36 +14,48 @@ import Header from '~/shared/components/Header';
 import { createTheme } from '~/shared/utils/theme';
 import { ApplicationState } from '~/shared/store';
 
-const Stack = createStackNavigator();
+const StackLogin = createStackNavigator();
+const StackHome = createStackNavigator();
 
 const RootStack: React.FC = () => {
   const { theme } = useSelector((state: ApplicationState) => state.theme);
+  const { isLogged } = useSelector((state: ApplicationState) => state.user);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <ThemeProvider theme={createTheme(theme)}>
         <NavigationContainer>
-          <Stack.Navigator
-            initialRouteName={LOGIN_SCREEN}
-            screenOptions={{
-              gestureEnabled: false,
-              animationEnabled: false,
-            }}>
-            <Stack.Screen
-              name={LOGIN_SCREEN}
-              component={Login}
-              options={{
-                header: () => <Header />,
-              }}
-            />
-            <Stack.Screen
-              name={TABS_SCREEN}
-              component={Tabs}
-              options={{
-                header: () => <Header />,
-              }}
-            />
-          </Stack.Navigator>
+          {isLogged ? (
+            <StackHome.Navigator
+              initialRouteName={TABS_SCREEN}
+              screenOptions={{
+                gestureEnabled: false,
+                animationEnabled: false,
+              }}>
+              <StackHome.Screen
+                name={TABS_SCREEN}
+                component={Tabs}
+                options={{
+                  header: () => <Header />,
+                }}
+              />
+            </StackHome.Navigator>
+          ) : (
+            <StackLogin.Navigator
+              initialRouteName={LOGIN_SCREEN}
+              screenOptions={{
+                gestureEnabled: false,
+                animationEnabled: false,
+              }}>
+              <StackLogin.Screen
+                name={LOGIN_SCREEN}
+                component={Login}
+                options={{
+                  header: () => <Header />,
+                }}
+              />
+            </StackLogin.Navigator>
+          )}
         </NavigationContainer>
       </ThemeProvider>
     </SafeAreaView>

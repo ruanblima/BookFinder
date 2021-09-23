@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/core';
 import { useFormik } from 'formik';
 
+import { useDispatch } from 'react-redux';
 import ButtonGlobal from '~/shared/components/ButtonGlobal';
 import Input from '~/shared/components/Input';
 
-import { TABS_SCREEN } from '~/shared/constants/routesNames';
+import { loginUserAction } from '~/shared/store/ducks/user/actions';
 
 import validationSchema from './validations';
 
@@ -17,13 +17,12 @@ interface DataFormProps {
 }
 
 const Login: React.FC = () => {
-  const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const [showPassword, setShowPassword] = useState(false);
 
   const login = (data: DataFormProps) => {
-    console.log(data);
-    navigation.navigate(TABS_SCREEN);
+    dispatch(loginUserAction(data.email, data.password));
   };
 
   const { handleSubmit, dirty, handleChange, values, errors } = useFormik({
