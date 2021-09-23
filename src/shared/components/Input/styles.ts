@@ -44,7 +44,7 @@ export const ContainerInput = styled.View<ContainerInputProps>`
   flex-direction: row;
   border-color: ${({ theme, error }) =>
     error ? theme.Colors.ERROR : theme.Colors.MEDIUM_GRAY};
-  background-color: ${({ theme }) => theme.Colors.WHITE};
+  background-color: ${({ theme }) => theme.Colors.BACKGROUND};
   margin-top: ${({ labelSameLine }) => (labelSameLine ? 0 : 10)}px;
   margin-left: ${({ labelSameLine }) => (labelSameLine ? 15 : 0)}px;
   width: ${({ labelSameLine }) => (labelSameLine ? '65%' : '100%')};
