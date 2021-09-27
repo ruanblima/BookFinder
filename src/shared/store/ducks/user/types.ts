@@ -3,11 +3,15 @@ import { Action } from 'redux';
 export enum UserTypes {
   LOGIN_USER = '@user/LOGIN_USER',
   LOGOUT_USER = '@user/LOGOUT_USER',
+  SAVE_INFORMATION_USER = '@user/SAVE_INFORMATION_USER',
 }
 
-interface UserProps {
+export interface UserProps {
   email: string;
   password: string;
+  name: string;
+  birthDate: string;
+  imageProfile: string;
 }
 
 export interface UserState {
@@ -22,4 +26,9 @@ export interface LoginUserProps extends Action {
 
 export interface LogoutUserProps extends Action {
   type: UserTypes.LOGOUT_USER;
+}
+
+export interface SaveInformationUserProps extends Action {
+  type: UserTypes.SAVE_INFORMATION_USER;
+  payload: { currentUser: UserProps };
 }

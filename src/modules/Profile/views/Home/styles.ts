@@ -5,7 +5,7 @@ import { s, sfs, vs } from '~/shared/utils/responsibleText';
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.Colors.BACKGROUND};
   flex: 1;
-  padding: 0px ${s(8)}px;
+  padding: 0px ${s(6)}px;
 `;
 
 export const ContainerImage = styled.View`
@@ -55,6 +55,17 @@ export const Image = styled.Image`
 `;
 
 export const ContainerButton = styled.View`
-  margin-bottom: ${vs(10)}px;
+  margin-bottom: ${vs(6)}px;
   padding: 0px ${vs(40)}px;
+`;
+
+export const Form = styled.View`
+  flex: 0.9;
+  width: 100%;
+  padding: 10px 10px;
+  justify-content: center;
+`;
+
+export const ContainerInput = styled.View`
+  margin-bottom: ${vs(10)}px;
 `;

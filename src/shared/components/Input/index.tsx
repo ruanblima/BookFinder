@@ -39,6 +39,7 @@ const Input: React.FC<TextInputProps & InputProps> = ({
           <S.ContainerInput error={error} labelSameLine={labelSameLine}>
             <S.Input
               {...rest}
+              autoCapitalize="none"
               customFontSize={fontSize + delta}
               iconRight={iconRight}
             />

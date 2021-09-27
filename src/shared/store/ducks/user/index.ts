@@ -6,6 +6,9 @@ const INITIAL_STATE: UserState = {
   currentUser: {
     email: '',
     password: '',
+    name: '',
+    birthDate: '',
+    imageProfile: '',
   },
   isLogged: false,
 };
@@ -25,6 +28,13 @@ const reducer: Reducer<UserState> = (
           password: payload.password,
         },
       };
+
+    case UserTypes.SAVE_INFORMATION_USER:
+      return {
+        ...state,
+        currentUser: payload.currentUser,
+      };
+
     case UserTypes.LOGOUT_USER:
       return INITIAL_STATE;
 
