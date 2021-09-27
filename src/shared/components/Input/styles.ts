@@ -63,13 +63,15 @@ export const Container = styled.View<ContainerProps>`
 `;
 
 export const Input = styled.TextInput.attrs<TextInputProps>(
-  ({ customFontSize }) => ({
+  ({ customFontSize, theme }) => ({
     fontSize: customFontSize,
+    placeholderTextColor: theme.Colors.TEXT_CLICKABLE,
   }),
 )<TextInputProps>`
   width: ${({ iconRight }) => (iconRight ? 90 : 100)}%;
   margin-bottom: ${vs(10)}px;
   margin-left: 10px;
+  color: ${({ theme }) => theme.Colors.TEXT_NO_CLICKABLE};
 `;
 export const ErrorMessage = styled(Text)`
   color: ${({ theme }) => theme.Colors.ERROR};
@@ -85,5 +87,5 @@ export const IconInput = styled(Icon).attrs<IconInputProps>(
   }),
 )<IconInputProps>`
   color: ${({ iconColor, theme }) =>
-    iconColor || theme.Colors.COLOR_APLICATION};
+    iconColor || theme.Colors.ICON_COLOR_CLICKABLE};
 `;

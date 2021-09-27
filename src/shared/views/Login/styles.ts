@@ -7,7 +7,7 @@ export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: ${({ theme }) => theme.Colors.BACKGROUND};
 `;
 
 export const ContainerTitle = styled.View`
@@ -18,7 +18,7 @@ export const ContainerTitle = styled.View`
 export const TextTitle = styled(Text).attrs({
   fontSize: 40,
 })`
-  color: black;
+  color: ${({ theme }) => theme.Colors.TEXT_NO_CLICKABLE};
 `;
 
 export const Form = styled.View`

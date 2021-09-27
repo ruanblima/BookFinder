@@ -25,6 +25,8 @@ type ColorsProps = {
   BUTTON_ERROR: string;
   CARD_COLOR: string;
   CARD_BORDER_COLOR: string;
+  ICON_COLOR_CLICKABLE: string;
+  TEXT_NO_CLICKABLE: string;
 };
 
 type SizingProps = {

@@ -8,7 +8,7 @@ import Text from '~/shared/components/Text';
 import Icon from '~/shared/components/Icon';
 
 interface StatusProps {
-  color: 'FEEDBACK_CORRECT' | 'ERROR' | 'FEEDBACK_WARNING' | 'COLOR_APLICATION';
+  color: 'FEEDBACK_CORRECT' | 'ERROR' | 'FEEDBACK_WARNING' | 'BUTTON_COLOR';
 }
 
 interface ButtonTypesProps {
@@ -29,7 +29,7 @@ const buttonTypes: ButtonTypesProps = {
     color: 'FEEDBACK_WARNING',
   },
   primary: {
-    color: 'COLOR_APLICATION',
+    color: 'BUTTON_COLOR',
   },
 };
 interface ButtonTextProps {
@@ -81,7 +81,7 @@ export const ButtonText = styled(Text).attrs<ButtonTextProps>(({ theme }) => ({
   color: ${({ theme, buttonType, status }) =>
     buttonType === 'outline'
       ? theme.Colors[buttonTypes[status].color]
-      : theme.Colors.WHITE};
+      : theme.Colors.BACKGROUND};
   text-align: center;
 `;
 

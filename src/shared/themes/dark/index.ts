@@ -38,5 +38,7 @@ export default {
     BUTTON_ERROR: '#FFFF00',
     CARD_COLOR: '#000',
     CARD_BORDER_COLOR: '#FFFF00',
+    ICON_COLOR_CLICKABLE: '#FFFf00',
+    TEXT_NO_CLICKABLE: '#FFF',
   },
 };
