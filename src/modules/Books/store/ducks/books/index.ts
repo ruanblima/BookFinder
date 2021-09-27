@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 
-import { UserTypes } from '../user/types';
+import { UserTypes } from '~/shared/store/ducks/user/types';
 import { BooksTypes, BooksState } from './types';
 
 const INITIAL_STATE: BooksState = {

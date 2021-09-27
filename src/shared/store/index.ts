@@ -11,7 +11,7 @@ import sagas from './sagas';
 
 import { FontState } from './ducks/font/types';
 import { ThemeState } from './ducks/theme/types';
-import { BooksState } from './ducks/books/types';
+import { BooksState } from '~/modules/Books/store/ducks/books/types';
 import { UserState } from './ducks/user/types';
 
 export interface ApplicationState {

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '~/shared/components/Input';
 import { ApplicationState } from '~/shared/store';
 
-import { getBooksAction } from '~/shared/store/ducks/books/actions';
-import CardBook from './components/CardBook';
+import { getBooksAction } from '~/modules/Books/store/ducks/books/actions';
+import CardBook from '~/modules/Books/components/CardBook';
 
 import * as S from './styles';
 

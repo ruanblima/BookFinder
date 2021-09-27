@@ -5,7 +5,7 @@ import { searchBooks } from '~/shared/services/books';
 import { BooksTypes, GetBooksProps } from './types';
 
 import { getBooksSuccessAction, getBooksErrorAction } from './actions';
-import { ApplicationState } from '../..';
+import { ApplicationState } from '~/shared/store';
 
 export interface ResponseGenerator {
   config?: any;
