@@ -12,6 +12,7 @@ export default {
     FONTSIZE_INPUT_LABEL: sfs(13),
     FONTSIZE_INPUT: sfs(20),
     ICON_SIZE: ms(22),
+    ICON_SIZE_BACK: ms(30),
   },
 
   Colors: {
@@ -40,5 +41,6 @@ export default {
     CARD_BORDER_COLOR: '#FFFF00',
     ICON_COLOR_CLICKABLE: '#FFFf00',
     TEXT_NO_CLICKABLE: '#FFF',
+    COLOR_HEADER: '#000',
   },
 };

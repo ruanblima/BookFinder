@@ -27,6 +27,7 @@ type ColorsProps = {
   CARD_BORDER_COLOR: string;
   ICON_COLOR_CLICKABLE: string;
   TEXT_NO_CLICKABLE: string;
+  COLOR_HEADER: string;
 };
 
 type SizingProps = {
@@ -39,6 +40,8 @@ type SizingProps = {
   FONTSIZE_LABEL: number;
   ICON_SIZE_BUTTON: number;
   ICON_SIZE: number;
+  ICON_SIZE_BACK: number;
+
 };
 
 // and extend them!
