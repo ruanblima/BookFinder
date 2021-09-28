@@ -12,7 +12,7 @@ export const Container = styled.View`
   flex-direction: row;
   padding-top: ${vs(8)}px;
   padding-bottom: ${vs(8)}px;
-  background-color: ${(props) => props.theme.Colors.WHITE};
+  background-color: ${(props) => props.theme.Colors.BACKGROUND};
 `;
 
 export const ContainerTab = styled.View`

@@ -83,10 +83,11 @@ const BottomTab: React.FC<BottomTabProps> = ({
               : 'person-outline'
           }
           type="ionicons"
-          color={isFocused ? Colors.BLACK : Colors.GRAY}
+          color={isFocused ? Colors.TEXT_CLICKABLE : Colors.TEXT_CLICKABLE}
         />
 
-        <TitleScreen color={isFocused ? Colors.BLACK : Colors.GRAY}>
+        <TitleScreen
+          color={isFocused ? Colors.TEXT_CLICKABLE : Colors.TEXT_CLICKABLE}>
           {nameScreen}
         </TitleScreen>
       </Touchable>
