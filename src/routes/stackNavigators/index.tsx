@@ -1,4 +1,4 @@
-import Home from './Home';
+import Books from './Books';
 import Profile from './Profile';
 
-export default { Home, Profile };
+export default { Books, Profile };

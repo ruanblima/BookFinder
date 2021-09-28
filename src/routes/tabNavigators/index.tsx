@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { HOME_TAB, PROFILE_TAB } from '~/shared/constants/routesNames';
+import { BOOK_TAB, PROFILE_TAB } from '~/shared/constants/routesNames';
 
 import BottomTab from '~/routes/bootomTab';
 
@@ -12,9 +12,9 @@ const Tab = createBottomTabNavigator();
 const Tabs: React.FC = () => (
   <Tab.Navigator tabBar={(props) => <BottomTab {...props} />}>
     <Tab.Screen
-      name={HOME_TAB}
+      name={BOOK_TAB}
       options={{ headerShown: false }}
-      component={Navigators.Home}
+      component={Navigators.Books}
     />
     <Tab.Screen
       name={PROFILE_TAB}

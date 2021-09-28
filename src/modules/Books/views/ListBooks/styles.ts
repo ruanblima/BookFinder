@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import Icon from '~/shared/components/Icon';
 
-import { vs } from '~/shared/utils/responsibleText';
+import { s, vs } from '~/shared/utils/responsibleText';
 
 export const Container = styled.View`
   flex: 1;
@@ -38,7 +38,7 @@ export const Indicator = styled.ActivityIndicator``;
 export const List = styled.FlatList`
   width: 100%;
   flex: 0.95;
-  padding: 5px;
+  padding: ${vs(10)}px ${s(13)}px;
 `;
 
 export const IconSearch = styled(Icon).attrs(({ theme }) => ({

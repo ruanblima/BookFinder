@@ -1,22 +1,22 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from '~/modules/Books/views/Home';
+import ListBooks from '~/modules/Books/views/ListBooks';
 import BookInformation from '~/modules/Books/views/BookInformation';
 import Header from '~/shared/components/Header';
 
 import {
-  HOME_SCREEN,
+  LIST_BOOK_SCREEN,
   BOOKS_INFORMATION_SCREEN,
 } from '~/shared/constants/routesNames';
 
 const Stack = createStackNavigator();
 
-const HomeStack: React.FC = () => (
+const BookStack: React.FC = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name={HOME_SCREEN}
-      component={Home}
+      name={LIST_BOOK_SCREEN}
+      component={ListBooks}
       options={{
         header: () => <Header />,
       }}
@@ -31,4 +31,4 @@ const HomeStack: React.FC = () => (
   </Stack.Navigator>
 );
 
-export default HomeStack;
+export default BookStack;

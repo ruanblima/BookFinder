@@ -9,7 +9,7 @@ import CardBook from '~/modules/Books/components/CardBook';
 
 import * as S from './styles';
 
-const Home: React.FC = () => {
+const ListBooks: React.FC = () => {
   const dispatch = useDispatch();
 
   const { loading, listBooks } = useSelector(
@@ -51,4 +51,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default ListBooks;
