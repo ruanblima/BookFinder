@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Profile from '~/modules/Profile/views/Home';
+import Header from '~/shared/components/Header';
 
 import { PROFILE } from '~/shared/constants/routesNames';
 
@@ -12,7 +13,9 @@ const ProfileStack: React.FC = () => (
     <Stack.Screen
       name={PROFILE}
       component={Profile}
-      options={{ headerShown: false }}
+      options={{
+        header: () => <Header />,
+      }}
     />
   </Stack.Navigator>
 );

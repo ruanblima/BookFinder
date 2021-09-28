@@ -35,9 +35,7 @@ const RootStack: React.FC = () => {
               <StackHome.Screen
                 name={TABS_SCREEN}
                 component={Tabs}
-                options={{
-                  header: () => <Header />,
-                }}
+                options={{ headerShown: false }}
               />
             </StackHome.Navigator>
           ) : (

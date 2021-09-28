@@ -1,5 +1,9 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
+
 import { BookProps } from '~/dtos/books';
+
+import { BOOKS_INFORMATION_SCREEN } from '~/shared/constants/routesNames';
 
 import * as S from './styles';
 
@@ -7,15 +11,24 @@ interface CardBookProps {
   book: BookProps;
 }
 
-const CardBook: React.FC<CardBookProps> = ({ book }) => (
-  <S.Touchable>
-    <S.Container>
-      {/* <S.ImageBook
-        source={{ uri: book.volumeInfo.imageLinks.smallThumbnail }}
-      /> */}
-      <S.TitleBook fontSize={20}>{book.volumeInfo.title}</S.TitleBook>
-    </S.Container>
-  </S.Touchable>
-);
+const CardBook: React.FC<CardBookProps> = ({ book }) => {
+  const navigation = useNavigation();
+  const goToBookInformation = () => {
+    navigation.navigate(BOOKS_INFORMATION_SCREEN, { book });
+  };
 
+  return (
+    <S.Touchable onPress={() => goToBookInformation()}>
+      <S.Container>
+        {book.volumeInfo.imageLinks.smallThumbnail && (
+          <S.ImageBook
+            source={{ uri: book.volumeInfo.imageLinks.smallThumbnail }}
+          />
+        )}
+
+        <S.TitleBook fontSize={20}>{book.volumeInfo.title}</S.TitleBook>
+      </S.Container>
+    </S.Touchable>
+  );
+};
 export default CardBook;

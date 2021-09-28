@@ -7,3 +7,4 @@ export const PROFILE = 'PROFILE_SCREEN';
 
 export const HOME_TAB = 'HOME_TAB';
 export const HOME_SCREEN = 'HOME_SCREEN';
+export const BOOKS_INFORMATION_SCREEN = 'BOOKS_INFORMATION_SCREEN';
