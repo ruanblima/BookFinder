@@ -1,5 +1,5 @@
-import { GET_BOOKS } from '../constants/api';
-import request from './request';
+import { GET_BOOKS } from '~/shared/constants/api';
+import request from '~/shared/services/request';
 
 export const searchBooks = async (text: string, index: number) => {
   try {

@@ -15,7 +15,7 @@ import {
 import { ApplicationState } from '~/shared/store';
 
 import validationSchema from './validations';
-import { mask } from '~/modules/Profile/utils';
+import { mask } from '~/modules/profile/utils';
 
 import * as S from './styles';
 

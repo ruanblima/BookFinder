@@ -1,6 +1,6 @@
 import { all, takeLatest, call, put, select } from 'redux-saga/effects';
 
-import { searchBooks } from '~/shared/services/books';
+import { searchBooks } from '~/modules/books/services/books';
 
 import { BooksTypes, GetBooksProps } from './types';
 
