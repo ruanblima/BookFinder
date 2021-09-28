@@ -1,4 +1,5 @@
 import React from 'react';
+import { TextProps } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import { ApplicationState } from '~/shared/store';
@@ -9,7 +10,7 @@ interface NewTextProps {
   fontSize?: number;
 }
 
-const NewText: React.FC<NewTextProps> = ({
+const NewText: React.FC<NewTextProps & TextProps> = ({
   fontSize = 16,
   children,
   ...rest
