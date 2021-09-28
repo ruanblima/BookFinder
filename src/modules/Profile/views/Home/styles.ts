@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import Icon from '~/shared/components/Icon';
 import { s, sfs, vs } from '~/shared/utils/responsibleText';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   background-color: ${({ theme }) => theme.Colors.BACKGROUND};
   flex: 1;
   padding: 0px ${s(6)}px;
@@ -57,6 +57,10 @@ export const Image = styled.Image`
 export const ContainerButton = styled.View`
   margin-bottom: ${vs(6)}px;
   padding: 0px ${vs(40)}px;
+`;
+
+export const ContainerButtons = styled.View`
+  margin-top: ${vs(15)}px;
 `;
 
 export const Form = styled.View`

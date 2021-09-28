@@ -144,21 +144,23 @@ const Profile: React.FC = () => {
         )}
       </S.Form>
 
-      <S.ContainerButton>
-        <ButtonGlobal
-          disabled={!dirty}
-          action={() => handleSubmit()}
-          title="SALVAR"
-        />
-      </S.ContainerButton>
+      <S.ContainerButtons>
+        <S.ContainerButton>
+          <ButtonGlobal
+            disabled={!dirty}
+            action={() => handleSubmit()}
+            title="SALVAR"
+          />
+        </S.ContainerButton>
 
-      <S.ContainerButton>
-        <ButtonGlobal
-          buttonType="outline"
-          action={() => logout()}
-          title="DESCONECTAR"
-        />
-      </S.ContainerButton>
+        <S.ContainerButton>
+          <ButtonGlobal
+            buttonType="outline"
+            action={() => logout()}
+            title="DESCONECTAR"
+          />
+        </S.ContainerButton>
+      </S.ContainerButtons>
       <Modal
         transparent
         visible={modalIsVisible}
