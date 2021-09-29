@@ -42,5 +42,6 @@ export default {
     ICON_COLOR_CLICKABLE: '#FFFf00',
     TEXT_NO_CLICKABLE: '#FFF',
     COLOR_HEADER: '#000',
+    ICON_NO_CLICKABLE: '#FFF',
   },
 };

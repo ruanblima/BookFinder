@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import ButtonGlobal from '~/shared/components/ButtonGlobal';
 import ModalOptionsCamera from '../../components/ModalOptionsCamera';
 import Input from '~/shared/components/Input';
+import RadioButtonList from '~/shared/components/RadioButton/RadioButtonList';
 
 import {
   logoutUserAction,
@@ -13,6 +14,7 @@ import {
 } from '~/shared/store/ducks/user/actions';
 
 import { ApplicationState } from '~/shared/store';
+import { GenderProps, LIST_GENDERS } from '../../constants';
 
 import validationSchema from './validations';
 import { mask } from '~/modules/profile/utils';
@@ -26,12 +28,14 @@ interface DataProps {
   name: string;
   birthDate: string;
   confirmNewPassword: string;
+  gender: GenderProps;
 }
 
 const Profile: React.FC = () => {
   const { currentUser } = useSelector((state: ApplicationState) => state.user);
 
   const [modalIsVisible, setModalIsVisible] = useState(false);
+  const [showGender, setShowGender] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -47,6 +51,7 @@ const Profile: React.FC = () => {
         email: dataForm.email,
         birthDate: dataForm.birthDate,
         password: dataForm.password,
+        gender: dataForm.gender,
       }),
     );
     actions.resetForm({ values: dataForm });
@@ -62,6 +67,7 @@ const Profile: React.FC = () => {
         birthDate: currentUser.birthDate,
         password: currentUser.password,
         confirmNewPassword: currentUser.password,
+        gender: currentUser.gender,
       },
       validationSchema,
       onSubmit: saveInformationUser,
@@ -110,6 +116,34 @@ const Profile: React.FC = () => {
             error={errors.birthDate}
           />
         </S.ContainerInput>
+
+        <S.ContainerSelect>
+          <S.IconSelect name="tooltip-account" />
+          <S.Select>
+            <S.HeaderSelect>
+              <S.GenderSelected>
+                {values.gender ? values.gender.label : 'Selecione o gênero'}
+              </S.GenderSelected>
+              <S.Button onPress={() => setShowGender(!showGender)}>
+                <S.IconSelect
+                  name={showGender ? 'chevron-up' : 'chevron-down'}
+                  type="ionicons"
+                  iconShow
+                />
+              </S.Button>
+            </S.HeaderSelect>
+            {showGender && (
+              <RadioButtonList
+                selected={values.gender}
+                checkRadio={(value) => {
+                  setFieldValue('gender', value);
+                  setShowGender(false);
+                }}
+                data={LIST_GENDERS}
+              />
+            )}
+          </S.Select>
+        </S.ContainerSelect>
 
         <S.ContainerInput>
           <Input

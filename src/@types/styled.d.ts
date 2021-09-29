@@ -28,6 +28,7 @@ type ColorsProps = {
   ICON_COLOR_CLICKABLE: string;
   TEXT_NO_CLICKABLE: string;
   COLOR_HEADER: string;
+  ICON_NO_CLICKABLE: string;
 };
 
 type SizingProps = {

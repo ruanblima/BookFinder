@@ -26,14 +26,16 @@ const Input: React.FC<TextInputProps & InputProps> = ({
   actionIcon,
   ...rest
 }) => {
-  const { Sizes } = useContext(ThemeContext);
+  const { Sizes, Colors } = useContext(ThemeContext);
   const { delta } = useSelector((state: ApplicationState) => state.font);
   const fontSize = Sizes.FONTSIZE_INPUT;
 
   return (
     <S.InputWrapper>
       <S.ContainerInputIcon>
-        {iconLeft && <S.IconInput name={iconLeft} />}
+        {iconLeft && (
+          <S.IconInput iconColor={Colors.ICON_NO_CLICKABLE} name={iconLeft} />
+        )}
         <S.Container labelSameLine={labelSameLine}>
           {label && <S.Label fontSize={sfs(9)}>{label}</S.Label>}
           <S.ContainerInput error={error} labelSameLine={labelSameLine}>

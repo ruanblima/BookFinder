@@ -11,24 +11,17 @@ export const Container = styled.View.attrs(({ theme }) => ({
   elevation: 7,
 }))`
   padding: 20px 15px;
-  width: 100%;
   background: ${({ theme }) => theme.Colors.CARD_COLOR};
   border-width: 1px;
   border-color: ${({ theme }) => theme.Colors.CARD_BORDER_COLOR};
   margin-bottom: ${vs(15)}px;
   border-radius: 6px;
   flex-direction: row;
+  width: 100%;
 `;
 
 export const Touchable = styled.TouchableOpacity``;
 
 export const TitleBook = styled(Text)`
   color: ${({ theme }) => theme.Colors.TEXT_CLICKABLE};
-  flex-shrink: 1;
-  flex-wrap: wrap;
-`;
-
-export const ImageBook = styled.Image`
-  width: 34px;
-  height: 34px;
 `;

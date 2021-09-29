@@ -1,6 +1,13 @@
 import styled from 'styled-components/native';
 import Icon from '~/shared/components/Icon';
+import Text from '~/shared/components/Text';
 import { s, sfs, vs } from '~/shared/utils/responsibleText';
+
+interface IconProps {
+  name: string;
+  iconColor?: string;
+  iconShow?: boolean;
+}
 
 export const Container = styled.ScrollView`
   background-color: ${({ theme }) => theme.Colors.BACKGROUND};
@@ -73,3 +80,40 @@ export const Form = styled.View`
 export const ContainerInput = styled.View`
   margin-bottom: ${vs(10)}px;
 `;
+
+export const ContainerSelect = styled.View`
+  padding: 10px 6px;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const Select = styled.View`
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: ${({ theme }) => theme.Colors.TEXT_CLICKABLE};
+  padding: 10px;
+  flex: 0.97;
+`;
+
+export const HeaderSelect = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const GenderSelected = styled(Text).attrs(({ theme }) => ({
+  fontSize: theme.Sizes.FONTSIZE_INPUT,
+}))`
+  color: ${({ theme }) => theme.Colors.TEXT_NO_CLICKABLE};
+`;
+
+export const IconSelect = styled(Icon).attrs<IconProps>(({ theme, name }) => ({
+  name,
+  size: theme.Sizes.ICON_SIZE,
+}))<IconProps>`
+  margin-top: ${({ iconShow }) => (iconShow ? 0 : 10)}px;
+  color: ${({ iconColor, theme }) =>
+    iconColor || theme.Colors.ICON_COLOR_CLICKABLE};
+`;
+
+export const Button = styled.TouchableOpacity``;

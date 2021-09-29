@@ -20,12 +20,6 @@ const CardBook: React.FC<CardBookProps> = ({ book }) => {
   return (
     <S.Touchable onPress={() => goToBookInformation()}>
       <S.Container>
-        {book.volumeInfo.imageLinks.smallThumbnail && (
-          <S.ImageBook
-            source={{ uri: book.volumeInfo.imageLinks.smallThumbnail }}
-          />
-        )}
-
         <S.TitleBook fontSize={20}>{book.volumeInfo.title}</S.TitleBook>
       </S.Container>
     </S.Touchable>

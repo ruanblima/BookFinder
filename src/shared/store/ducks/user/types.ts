@@ -1,4 +1,5 @@
 import { Action } from 'redux';
+import { GenderProps } from '~/modules/profile/constants';
 
 export enum UserTypes {
   LOGIN_USER = '@user/LOGIN_USER',
@@ -12,6 +13,7 @@ export interface UserProps {
   name: string;
   birthDate: string;
   imageProfile: string;
+  gender: GenderProps;
 }
 
 export interface UserState {
