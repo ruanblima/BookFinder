@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import ListBooks from '~/modules/books/views/ListBooks';
-import BookInformation from '~/modules/books/views/BookInformation';
+import ListBooks from '~/modules/Books/views/ListBooks';
+import BookInformation from '~/modules/Books/views/BookInformation';
 import Header from '~/shared/components/Header';
 
 import {

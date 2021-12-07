@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Profile from '~/modules/profile/views/Home';
+import Profile from '~/modules/Profile/views/Home';
 import Header from '~/shared/components/Header';
 
 import { PROFILE } from '~/shared/constants/routesNames';
